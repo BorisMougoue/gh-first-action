@@ -1,0 +1,25 @@
+# this is the name of workflow
+name: First Workflow
+
+# Controls when the workflow will run; you define which event can trigger the workflow
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # assign a name to the job
+ first-job:
+    # The type of runner that the job will run on
+    # This is the server on which the job will be performed. 
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps: 
+     # Runs a single command using the runner's shell
+      - name: print greeting  # the name of the step
+        run: echo "Hello, world!"  # The command to be executed in the step
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
